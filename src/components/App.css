@@ -1,0 +1,76 @@
+/* initial resets */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  background: #44badd;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url("./robot.gif");
+  background-position: left center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.button {
+  cursor: pointer;
+  width: 20rem;
+  height: 4rem;
+  border: none;
+  outline: none;
+  background: #ff3482;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2rem;
+  border-radius: 0.5rem;
+  color: #fff;
+  box-shadow: 2px 2px 20px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+  animation: anim 1s ease-in-out;
+}
+
+.button:hover {
+  filter: brightness(90%);
+}
+.button:active {
+  transform: scale(0.98);
+}
+
+.button:disabled {
+  filter: brightness(30%);
+}
+
+/* Media Query for Tablets and Phone */
+@media screen and (max-width: 1000px) {
+  .container {
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
+/* animation */
+@keyframes anim {
+  0% {
+    transform: rotate(360deg);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    ransform: rotate(0);
+  }
+}
